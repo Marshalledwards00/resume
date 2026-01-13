@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Spots: A social platform for sharing and discovering new places.">
+  <meta name="author" content="Your Name">
+  <meta name="keywords" content="spots, social, travel, sharing, places, posts, profile">
+  <link rel="stylesheet" href="pages/index.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <title>Spots</title>
+</head>
+<body class="page">
+  <div class="page__content">
+    <header class="header">
+      <img src="./images/Logo.svg" alt="Spot logo" class="header__logo">
+    </header>
+    <main class="content">
+      <section class="profile page__section">
+  <img src="./images/avatar.jpg" class="profile__avatar" alt="User avatar">
+  <div class="profile__column">
+    <h1 class="profile__name">Bessie Coleman</h1>
+    <p class="profile__description">Civil Aviator</p>
+    <button type="button" class="profile__edit-btn">
+      <img src="./images/edit-icon.png" alt="Pencil">Edit Profile
+    </button>
+  </div>
+  <button type="button" class="profile__add-btn">
+    <img src="./images/plus-icon.png" alt="Plus icon">New Post
+  </button>
+  </section>
+  <section class="cards page__section">
+      <!-- Cards list (populated by scripts/index.js) -->
+      <ul class="cards__list">
+        <!-- Cards will be generated from the template -->
+      </ul>
+      <!-- Card template -->
+      <template id="card-template">
+        <li class="card">
+          <div class="card__image-wrap">
+            <img class="card__image" alt="">
+            <button type="button" class="card__delete-button" aria-label="Delete"></button>
+          </div>
+          <div class="card__footer">
+            <h2 class="card__title"></h2>
+            <div class="card__actions">
+              <button type="button" class="card__like-button" aria-label="Like"></button>
+            </div>
+          </div>
+        </li>
+      </template>
+    </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__copyright">2025 &copy; Spots</p>
+    </footer>
+    <div class="modal" id="edit-profile-modal">
+      <div class="modal__container">
+        <button class="modal__close" aria-label="Close">x</button>
+        <h2 class="modal__title">Edit profile</h2>
+        <form class="modal__form" action="#" method="post">
+          <div class="modal__field">
+            <label class="modal__label" for="profile-name">Name</label>
+            <input id="profile-name" class="modal__input" name="name" type="text" placeholder="Type your name">
+          </div>
+          <div class="modal__field">
+            <label class="modal__label" for="profile-description">Description</label>
+            <textarea id="profile-description" class="modal__textarea" name="Description" placeholder="Describe yourself"></textarea>
+          </div>
+          <div class="modal__actions">
+            <button type="submit" class="modal__save-btn">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Image preview modal -->
+    <div class="modal" id="image-preview-modal">
+      <div class="modal__container modal__container--preview">
+        <button class="modal__close" aria-label="Close">x</button>
+        <img class="modal__image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Preview image"/>
+        <h3 class="modal__caption"></h3>
+      </div>
+    </div>
+
+    <!-- New Post modal (hidden by default) -->
+    <div class="modal" id="new-post-modal">
+      <div class="modal__container">
+        <button class="modal__close" aria-label="Close">x</button>
+        <h2 class="modal__title">New post</h2>
+        <form class="modal__form" action="#" method="post">
+          <div class="modal__field">
+            <label class="modal__label" for="post-image">Image</label>
+            <input id="post-image" class="modal__input" name="image" type="url" placeholder="Paste a link to picture" required>
+          </div>
+          <div class="modal__field">
+            <label class="modal__label" for="post-title">Title</label>
+            <input id="post-title" class="modal__input" name="title" type="text" placeholder="Title" required>
+          </div>
+          <div class="modal__actions">
+            <button type="submit" class="modal__save-btn">Create</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="scripts/index.js" defer></script>
+</body>
+</html>

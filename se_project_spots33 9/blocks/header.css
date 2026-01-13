@@ -1,0 +1,49 @@
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  max-width: 1600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.header__logo {
+  width: 140px;
+  height: auto;
+}
+
+.header__title {
+  max-width: 729px;
+  margin: 80px 0 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 60px;
+  line-height: 72px;
+}
+
+.header__description {
+  max-width: 683px;
+  margin: 28px 0 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.header__footer {
+  position: absolute;
+  left: 0;
+  bottom: 40px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 80px;
+}
+
+.header__paragraph {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  color: #838383;
+}
+

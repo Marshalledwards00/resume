@@ -1,0 +1,168 @@
+/* Modal block styles
+   Two modals share the same classes. They are hidden by default and
+   become visible when the modal_is-opened class is present on the
+   outer `.modal` element.
+*/
+
+.modal {
+  padding: 0 10px;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: visibility 0.3s, opacity 0.3s ease-in;
+  z-index: 1000;
+}
+
+.modal_is-opened {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal__container {
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px 32px 28px 32px;
+  width: 90%;
+  max-width: 520px;
+  box-shadow: 0 10px 30px rgba(7, 12, 14, 0.3);
+}
+
+.modal__title {
+  margin: 0 0 12px 0;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #111;
+}
+
+/* Consolidated button styles (single authoritative definition) */
+.modal__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #666;
+  transition: background 0.2s, color 0.2s;
+}
+
+.modal__close:hover,
+.modal__close:focus {
+  background: rgba(0,102,255,0.06);
+  color: #0066ff;
+  border-radius: 6px;
+}
+
+.modal__form {
+  margin-top: 8px;
+}
+
+.modal__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.modal__label {
+  font-size: 13px;
+  color: #444;
+}
+
+.modal__input,
+.modal__textarea {
+  border: 1px solid #dcdcdc;
+  background: #fff;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #111;
+}
+
+.modal__textarea {
+  min-height: 84px;
+  resize: vertical;
+}
+
+.modal__actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 6px;
+}
+
+.modal__save-btn {
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  transition: background 0.2s, color 0.2s;
+}
+.modal__save-btn:hover,
+.modal__save-btn:focus {
+  background: #333;
+}
+
+
+/* Responsive adjustments */
+@media (min-width: 720px) {
+  .modal__container {
+    width: 520px;
+    padding: 40px 40px 36px 40px;
+    border-radius: 16px;
+  }
+  .modal__title {
+    font-size: 22px;
+  }
+}
+@media (max-width: 719px) {
+  .modal__container {
+    padding: 20px 8px 16px 8px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+/* Preview modal overrides: allow large images that scale inside viewport */
+#image-preview-modal .modal__container.modal__container--preview {
+  padding: 12px;
+  max-width: 90vw;
+  width: auto;
+  background: transparent;
+  box-shadow: none;
+}
+
+#image-preview-modal .modal__image {
+  width: auto;
+  max-width: calc(90vw - 32px);
+  max-height: calc(80vh - 48px);
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px;
+}
+
+#image-preview-modal .modal__caption {
+  margin-top: 12px;
+  color: #fff;
+  text-align: center;
+}
